@@ -1,6 +1,9 @@
-# SQL Internship - TASK-02: Data Insertion and Handling Null Values, Performing Update and # Local Market E-Commerce Database – Internship Task 2
+# SQL Internship - TASK 02: Data Insertion, NULL Handling, Update, Delete & Final View  
+## 💼 Local Market E-Commerce Database – PostgreSQL
+---
 
 ## 📌 Overview
+
 This project simulates a backend database system for a local market e-commerce platform using **PostgreSQL**. It covers full **Data Definition** and **Data Manipulation** operations including:
 
 - Data Reset  
@@ -28,73 +31,81 @@ The schema is designed for a small seller ecosystem including sellers, products,
 
 ## 🔁 Operations Performed
 
-### 1. TRUNCATE  
+### ✅ 1. TRUNCATE  
 All tables are reset using:
 ```sql
 TRUNCATE TABLE ... RESTART IDENTITY CASCADE;
-This clears existing data and resets ID counters.
 
-2. INSERT (10 Records Each)
+---
+
+### ✅ 2. INSERT (10 Records Each)
+
 Data is inserted into each table with variations including:
 
-NULL values for update demonstration
+- `NULL` values for update demonstration  
+- Diverse categories, products, and payment methods
 
-Diverse categories, products, and payment methods
+---
 
-3. UPDATE (Multiple Tables)
+### ✅ 3. UPDATE (Multiple Tables)
+
 Handled:
 
-NULL correction for email/phone fields
+- `NULL` correction for email/phone fields  
+- Price and description updates  
+- Stock restock and quantity changes  
+- Order status and date corrections  
+- Payment method and amount changes
 
-Price and description updates
+---
 
-Stock restock and quantity changes
+### ✅ 4. DELETE (Conditional)
 
-Order status and date corrections
-
-Payment method and amount changes
-
-4. DELETE (Conditional)
 Deleted:
 
-Customers with phone numbers starting with '90'
+- Customers with phone numbers starting with `'90'`  
+- Sellers in specific test cities  
+- Orders with status `'Cancelled'` or `'Pending'`  
+- Inventory items with low stock  
+- Products above a price threshold or containing keywords like `'Pen'`  
+- Unneeded categories such as `'Stationery'`, `'Footwear'`
 
-Sellers in specific test cities
+---
 
-Orders with status 'Cancelled' or 'Pending'
+### ✅ 5. SELECT
 
-Inventory items with low stock
+Used `SELECT * FROM` queries at the end to confirm the final data state of all tables.
 
-Products above a price threshold or containing keywords like 'Pen'
+---
 
-Unneeded categories such as 'Stationery', 'Footwear'
+## 🛠️ Tools Used
 
-5. SELECT
-Used SELECT * FROM queries at the end to confirm the final data state of all tables.
+- **PostgreSQL**  
+- **pgAdmin 4**
 
-🛠️ Tools Used
-PostgreSQL
+---
 
-pgAdmin 4
+## ▶️ How to Run
 
-##▶️ How to Run
-Open pgAdmin
+1. Open **pgAdmin**  
+2. Create or connect to a database (e.g., `LocalMarketDB`)  
+3. Open the **Query Tool**  
+4. Paste and run the provided SQL script  
+5. Verify your output using the final `SELECT` statements
 
-Create or connect to a database (e.g., LocalMarketDB)
+---
 
-Open the Query Tool
+## 📝 Notes
 
-Paste and run the provided SQL script
+- `RESTART IDENTITY` resets all auto-incrementing primary key IDs  
+- `CASCADE` ensures foreign key–linked deletions work correctly  
+- Designed as an academic/internship project to practice:
+  - `INSERT`, `UPDATE`, `DELETE`, `SELECT`  
+  - `WHERE`, `LIKE`, `IN`, `IS NULL`, `CASCADE`
 
-Verify your output using the final SELECT statements
+---
 
-##📝 Notes
-RESTART IDENTITY resets all auto-incrementing primary key IDs
+## 📁 Files
 
-CASCADE ensures foreign key–linked deletions work correctly
-
-Designed as an academic/internship project to practice:
-
-INSERT, UPDATE, DELETE, SELECT
-
-WHERE, LIKE, IN, IS NULL, CASCADE
+- `task2.sql` – Full script with TRUNCATE, INSERT, UPDATE, DELETE, and SELECT  
+- `README.md` – Project documentation
